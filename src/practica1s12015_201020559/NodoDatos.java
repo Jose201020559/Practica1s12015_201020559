@@ -10,16 +10,12 @@ package practica1s12015_201020559;
  *
  * @author Jose
  */
-public class NodoJugadores {
-    public String Tipo;
-    public NodoJugadores Siguiente;
-    public ListaDatos datos;
+public class NodoDatos {
+    public String dato;
+    public NodoDatos Siguiente;
     
-    public NodoJugadores(String tipo){
-        this.Tipo=tipo;
+    public NodoDatos(String d){
+        this.dato=d;
         this.Siguiente = null;
-        this.datos=new ListaDatos();
     }
-    
- 
 }
