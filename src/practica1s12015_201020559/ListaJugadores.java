@@ -86,10 +86,6 @@ public class ListaJugadores {
         NodoDatos aux1;
         aux1=aux.datos.inicio;
         while(aux!=null){
-            /*if(aux.Siguiente!=null){
-            printwriter.println( aux.Tipo + " -> " + aux.Siguiente.Tipo +"; \n"); 
-            }
-            printwriter.println( aux.Tipo + " -> " + aux.datos.inicio.dato +"; \n");*/
             printwriter.println(aux.datos.graficard(aux.datos.inicio)); 
             aux = aux.Siguiente;
         }    
