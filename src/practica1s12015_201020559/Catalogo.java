@@ -24,7 +24,7 @@ public class Catalogo extends javax.swing.JFrame {
     
     public static String tipoj = "";
     public String rutai="";
-    public NodoCatalogo aux;
+    public NodoCatalogo aux = null;
     
     public Catalogo() {
         initComponents();
@@ -274,24 +274,24 @@ public class Catalogo extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if(aux.Aterior!=null){
+        if(aux!=null){
+            if(aux.Aterior!=null){
             aux = aux.Aterior;
-            jLabel9.setText(aux.Nombre);
-            jLabel8.setText(aux.Tipo);
-            jLabel7.setText(Integer.toString(aux.ataque));
-            jLabel6.setText(Integer.toString(aux.vida));
+            repintar();
         }
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        if(aux.Siguiente!=null){
+        if (aux!=null){
+            if(aux.Siguiente!=null ){
             aux = aux.Siguiente;
-            jLabel9.setText(aux.Nombre);
-            jLabel8.setText(aux.Tipo);
-            jLabel7.setText(Integer.toString(aux.ataque));
-            jLabel6.setText(Integer.toString(aux.vida));
+            repintar();
         }
+        }
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -347,10 +347,7 @@ public class Catalogo extends javax.swing.JFrame {
                 Practica1s12015_201020559.plantas.insertarDatos(jTextField2.getText(),(String) jComboBox1.getSelectedItem(), Integer.parseInt(jTextField3.getText()),Integer.parseInt(jTextField1.getText()));
                 Practica1s12015_201020559.plantas.imprimir();
                 aux=Practica1s12015_201020559.plantas.inicio;
-                jLabel9.setText(aux.Nombre);
-                jLabel8.setText(aux.Tipo);
-                jLabel7.setText(Integer.toString(aux.ataque));
-                jLabel6.setText(Integer.toString(aux.vida));
+                repintar();
             }
             
         }else if(tipoj.equalsIgnoreCase("Zombi")){
@@ -360,16 +357,20 @@ public class Catalogo extends javax.swing.JFrame {
                 Practica1s12015_201020559.zombis.insertarDatos(jTextField2.getText(),(String) jComboBox1.getSelectedItem(), Integer.parseInt(jTextField3.getText()),Integer.parseInt(jTextField1.getText()));
                 Practica1s12015_201020559.zombis.imprimir();
                 aux=Practica1s12015_201020559.zombis.inicio;
-                jLabel9.setText(aux.Nombre);
-                jLabel8.setText(aux.Tipo);
-                jLabel7.setText(Integer.toString(aux.ataque));
-                jLabel6.setText(Integer.toString(aux.vida));
+                repintar();
+                
             }
             
         }
         
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    public void repintar(){
+        jLabel9.setText(aux.Nombre);
+        jLabel8.setText(aux.Tipo);
+        jLabel7.setText(Integer.toString(aux.ataque));
+        jLabel6.setText(Integer.toString(aux.vida));
+    }
     /**
      * @param args the command line arguments
      */
