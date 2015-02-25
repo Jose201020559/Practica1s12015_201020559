@@ -6,7 +6,10 @@
 
 package practica1s12015_201020559;
 
+import java.awt.Image;
 import java.io.File;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 
 /**
@@ -21,6 +24,7 @@ public class Catalogo extends javax.swing.JFrame {
     
     public static String tipoj = "";
     public String rutai="";
+    public NodoCatalogo aux;
     
     public Catalogo() {
         initComponents();
@@ -58,7 +62,6 @@ public class Catalogo extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -105,6 +108,11 @@ public class Catalogo extends javax.swing.JFrame {
         });
 
         jButton5.setText("AGREGAR");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jLabel10.setText("-----");
 
@@ -195,13 +203,6 @@ public class Catalogo extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("AGREGAR");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -209,7 +210,6 @@ public class Catalogo extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -230,10 +230,11 @@ public class Catalogo extends javax.swing.JFrame {
                                 .addGap(42, 42, 42)
                                 .addComponent(jButton1)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton3)))))
-                .addContainerGap())
+                                .addComponent(jButton2)))
+                        .addContainerGap(165, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,8 +263,7 @@ public class Catalogo extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3))))
+                            .addComponent(jButton2))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -274,10 +274,24 @@ public class Catalogo extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        if(aux.Aterior!=null){
+            aux = aux.Aterior;
+            jLabel9.setText(aux.Nombre);
+            jLabel8.setText(aux.Tipo);
+            jLabel7.setText(Integer.toString(aux.ataque));
+            jLabel6.setText(Integer.toString(aux.vida));
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        if(aux.Siguiente!=null){
+            aux = aux.Siguiente;
+            jLabel9.setText(aux.Nombre);
+            jLabel8.setText(aux.Tipo);
+            jLabel7.setText(Integer.toString(aux.ataque));
+            jLabel6.setText(Integer.toString(aux.vida));
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
@@ -294,18 +308,19 @@ public class Catalogo extends javax.swing.JFrame {
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
-        jPanel1.setVisible(false);
+        //jPanel1.setVisible(false);
         if (tipoj.equalsIgnoreCase("Planta")){
-            
+            aux=Practica1s12015_201020559.plantas.inicio;
         }else if(tipoj.equalsIgnoreCase("Zombi")){
-            
+            aux=Practica1s12015_201020559.zombis.inicio;
+        }
+        if(aux!=null){
+            jLabel9.setText(aux.Nombre);
+            jLabel8.setText(aux.Tipo);
+            jLabel7.setText(Integer.toString(aux.ataque));
+            jLabel6.setText(Integer.toString(aux.vida));
         }
     }//GEN-LAST:event_formWindowActivated
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        jPanel1.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -316,9 +331,44 @@ public class Catalogo extends javax.swing.JFrame {
         {
         File fichero = fileChooser.getSelectedFile();
         //obtenemos la ruta
-        rutai=fichero.getAbsolutePath();}
+        rutai=fichero.getPath();
+        }
         jLabel10.setText(rutai);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        /*ImageIcon j1 = new ImageIcon(getClass().getResource(jLabel10.getText()));
+        Icon ij1 = new ImageIcon(j1.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_DEFAULT));*/
+        if (tipoj.equalsIgnoreCase("Planta")){
+            if(jTextField2.getText().equalsIgnoreCase("") && jTextField1.getText().equalsIgnoreCase("") && jTextField3.getText().equalsIgnoreCase("")){
+                
+            }else{
+                Practica1s12015_201020559.plantas.insertarDatos(jTextField2.getText(),(String) jComboBox1.getSelectedItem(), Integer.parseInt(jTextField3.getText()),Integer.parseInt(jTextField1.getText()));
+                Practica1s12015_201020559.plantas.imprimir();
+                aux=Practica1s12015_201020559.plantas.inicio;
+                jLabel9.setText(aux.Nombre);
+                jLabel8.setText(aux.Tipo);
+                jLabel7.setText(Integer.toString(aux.ataque));
+                jLabel6.setText(Integer.toString(aux.vida));
+            }
+            
+        }else if(tipoj.equalsIgnoreCase("Zombi")){
+            if(jTextField2.getText().equalsIgnoreCase("") && jTextField1.getText().equalsIgnoreCase("") && jTextField3.getText().equalsIgnoreCase("")){
+                
+            }else{
+                Practica1s12015_201020559.zombis.insertarDatos(jTextField2.getText(),(String) jComboBox1.getSelectedItem(), Integer.parseInt(jTextField3.getText()),Integer.parseInt(jTextField1.getText()));
+                Practica1s12015_201020559.zombis.imprimir();
+                aux=Practica1s12015_201020559.zombis.inicio;
+                jLabel9.setText(aux.Nombre);
+                jLabel8.setText(aux.Tipo);
+                jLabel7.setText(Integer.toString(aux.ataque));
+                jLabel6.setText(Integer.toString(aux.vida));
+            }
+            
+        }
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -358,7 +408,6 @@ public class Catalogo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JComboBox jComboBox1;

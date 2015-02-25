@@ -23,8 +23,8 @@ public class ListaCatalogo {
         this.tama=0;
     }
     
-    public void insertarDatos(String n, String t, int a, int v, Icon i){
-        NodoCatalogo nuevo = new NodoCatalogo(n,t,a,v,i);
+    public void insertarDatos(String n, String t, int a, int v/*, Icon i*/){
+        NodoCatalogo nuevo = new NodoCatalogo(n,t,a,v/*,i*/);
         if(this.tama ==0){
             this.inicio=nuevo;
             this.fin =nuevo;
