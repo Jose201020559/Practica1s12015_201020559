@@ -51,6 +51,7 @@ public class Catalogo extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -62,6 +63,8 @@ public class Catalogo extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -116,6 +119,13 @@ public class Catalogo extends javax.swing.JFrame {
 
         jLabel10.setText("-----");
 
+        jButton6.setText("MODIFICAR");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -137,15 +147,21 @@ public class Catalogo extends javax.swing.JFrame {
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(56, 56, 56)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton5)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jButton5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton6))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -167,7 +183,8 @@ public class Catalogo extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5))
+                    .addComponent(jButton5)
+                    .addComponent(jButton6))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -203,6 +220,16 @@ public class Catalogo extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setText("MODIFICAR ACTUAL");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jLabel15.setFont(new java.awt.Font("OCR A Extended", 1, 24)); // NOI18N
+        jLabel15.setText("0/0");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -213,6 +240,13 @@ public class Catalogo extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(42, 42, 42)
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton3))
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -225,16 +259,12 @@ public class Catalogo extends javax.swing.JFrame {
                                     .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(42, 42, 42)
-                                .addComponent(jButton1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2)))
-                        .addContainerGap(165, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel15)
+                                .addGap(43, 43, 43))))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,8 +274,9 @@ public class Catalogo extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -263,7 +294,8 @@ public class Catalogo extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
-                            .addComponent(jButton2))))
+                            .addComponent(jButton2)
+                            .addComponent(jButton3))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -309,16 +341,14 @@ public class Catalogo extends javax.swing.JFrame {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
         //jPanel1.setVisible(false);
+        jButton6.setVisible(false);
         if (tipoj.equalsIgnoreCase("Planta")){
             aux=Practica1s12015_201020559.plantas.inicio;
         }else if(tipoj.equalsIgnoreCase("Zombi")){
             aux=Practica1s12015_201020559.zombis.inicio;
         }
         if(aux!=null){
-            jLabel9.setText(aux.Nombre);
-            jLabel8.setText(aux.Tipo);
-            jLabel7.setText(Integer.toString(aux.ataque));
-            jLabel6.setText(Integer.toString(aux.vida));
+            repintar();
         }
     }//GEN-LAST:event_formWindowActivated
 
@@ -331,33 +361,36 @@ public class Catalogo extends javax.swing.JFrame {
         {
         File fichero = fileChooser.getSelectedFile();
         //obtenemos la ruta
-        rutai=fichero.getPath();
+        rutai=fichero.getPath().replace('\\','/');
         }
         jLabel10.setText(rutai);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        /*ImageIcon j1 = new ImageIcon(getClass().getResource(jLabel10.getText()));
-        Icon ij1 = new ImageIcon(j1.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_DEFAULT));*/
+
+        ImageIcon j1 = new ImageIcon(rutai);
+        Icon ij1 = new ImageIcon(j1.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_DEFAULT));
         if (tipoj.equalsIgnoreCase("Planta")){
             if(jTextField2.getText().equalsIgnoreCase("") && jTextField1.getText().equalsIgnoreCase("") && jTextField3.getText().equalsIgnoreCase("")){
                 
             }else{
-                Practica1s12015_201020559.plantas.insertarDatos(jTextField2.getText(),(String) jComboBox1.getSelectedItem(), Integer.parseInt(jTextField3.getText()),Integer.parseInt(jTextField1.getText()));
+                Practica1s12015_201020559.plantas.insertarDatos(jTextField2.getText(),(String) jComboBox1.getSelectedItem(), Integer.parseInt(jTextField3.getText()),Integer.parseInt(jTextField1.getText()),ij1);
                 Practica1s12015_201020559.plantas.imprimir();
-                aux=Practica1s12015_201020559.plantas.inicio;
+                aux=Practica1s12015_201020559.plantas.fin;
                 repintar();
+                limpiar();
             }
             
         }else if(tipoj.equalsIgnoreCase("Zombi")){
             if(jTextField2.getText().equalsIgnoreCase("") && jTextField1.getText().equalsIgnoreCase("") && jTextField3.getText().equalsIgnoreCase("")){
                 
             }else{
-                Practica1s12015_201020559.zombis.insertarDatos(jTextField2.getText(),(String) jComboBox1.getSelectedItem(), Integer.parseInt(jTextField3.getText()),Integer.parseInt(jTextField1.getText()));
+                Practica1s12015_201020559.zombis.insertarDatos(jTextField2.getText(),(String) jComboBox1.getSelectedItem(), Integer.parseInt(jTextField3.getText()),Integer.parseInt(jTextField1.getText()), ij1);
                 Practica1s12015_201020559.zombis.imprimir();
-                aux=Practica1s12015_201020559.zombis.inicio;
+                aux=Practica1s12015_201020559.zombis.fin;
                 repintar();
+                limpiar();
                 
             }
             
@@ -365,12 +398,36 @@ public class Catalogo extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton5ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        jButton5.setVisible(false);
+        jButton6.setVisible(true);
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        
+        jButton6.setVisible(false);
+        jButton5.setVisible(true);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     public void repintar(){
         jLabel9.setText(aux.Nombre);
         jLabel8.setText(aux.Tipo);
         jLabel7.setText(Integer.toString(aux.ataque));
         jLabel6.setText(Integer.toString(aux.vida));
+        jLabel1.setIcon(aux.imagen);
     }
+    
+    public void limpiar(){
+        jTextField1.setText("");
+        jTextField2.setText("");
+        jTextField3.setText("");
+        rutai="";
+        jLabel10.setText("");
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -409,8 +466,10 @@ public class Catalogo extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -418,6 +477,7 @@ public class Catalogo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

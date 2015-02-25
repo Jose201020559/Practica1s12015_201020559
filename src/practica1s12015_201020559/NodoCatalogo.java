@@ -18,17 +18,17 @@ public class NodoCatalogo {
     public String Tipo;
     public int ataque;
     public int vida;
-    //public Icon imagen;
+    public Icon imagen;
     public NodoCatalogo Siguiente;
     public NodoCatalogo Aterior;
 
     
-    public NodoCatalogo(String n, String t, int a, int v /* ,Icon i*/){
+    public NodoCatalogo(String n, String t, int a, int v ,Icon i){
         this.Nombre = n;
         this.Tipo = t;
         this.ataque = a;
         this.vida = v;
-       // this.imagen = i;
+        this.imagen = i;
         this.Siguiente = null;
         this.Aterior = null;
     }
