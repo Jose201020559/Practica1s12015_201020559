@@ -106,7 +106,7 @@ public class ListaJugadores {
             }
     try{
 
-            String dotPath="C:\\Program Files\\Graphviz 2.28\\bin\\dot.exe";
+            String dotPath="C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe";
             String fileInputPath ="C:\\Users\\Public\\Documents\\jugadores.dot";
             String fileOutputPath="C:\\Users\\Public\\Documents\\jugadores.jpg";
 

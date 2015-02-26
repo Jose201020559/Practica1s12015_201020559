@@ -194,9 +194,10 @@ public class Principal extends javax.swing.JFrame {
             try {
             // TODO add your handling code here:
             Practica1s12015_201020559.jugadores.GraficarLista();
+            Practica1s12015_201020559.graficarcatalogo();
             try {
  
-                File file = new File("C:\\Users\\Public\\Documents\\jugadores.jpg");
+               // File file = new File("C:\\Users\\Public\\Documents\\jugadores.jpg");
                 //Desktop.getDesktop().open(file);
             } catch(Exception e) {
 

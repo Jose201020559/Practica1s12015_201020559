@@ -41,17 +41,24 @@ public class Practica1s12015_201020559 {
         printwriter.println("node[shape=box,  color=gray]\n");
         printwriter.println("edge[color=black];\n");
         printwriter.println("rankdir=UD;\n");
-        printwriter.println(plantas.graficard(plantas.inicio)); 
-        printwriter.println(zombis.graficard(zombis.inicio)); 
-        printwriter.println(  "INICIO -> " + plantas.inicio.Nombre +"; \n"); 
-        printwriter.println(  "INICIO -> " + zombis.inicio.Nombre +"; \n"); 
+        
+        
+        if(plantas.tama!=0){
+            printwriter.println(plantas.graficard(plantas.inicio)); 
+            printwriter.println(  "INICIO -> " + plantas.inicio.Nombre +"; \n"); 
+        }
+        if(zombis.tama!=0){
+            printwriter.println(zombis.graficard(zombis.inicio)); 
+            printwriter.println(  "INICIO -> " + zombis.inicio.Nombre +"; \n"); 
+        }
+        
         printwriter.println("}");
         printwriter.close();
     } catch (IOException ex) {
             }
     try{
 
-            String dotPath="C:\\Program Files\\Graphviz 2.28\\bin\\dot.exe";
+            String dotPath="C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe";
             String fileInputPath ="C:\\Users\\Public\\Documents\\catalogos.dot";
             String fileOutputPath="C:\\Users\\Public\\Documents\\catalogos.jpg";
 
@@ -78,25 +85,6 @@ public class Practica1s12015_201020559 {
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
         
-        
-        
-        
-        /*jugadores.insertarJ("PLANTA");
-        jugadores.insertarJ("ZOMBI");
-        jugadores.insertarJ ("NADA");
-        
-        jugadores.InsertarDato(jugadores.buscar("ZOMBI"),"Jose");
-        jugadores.InsertarDato(jugadores.buscar("ZOMBI"),"Pablo");
-        jugadores.InsertarDato(jugadores.buscar("ZOMBI"),"Araiz");
-        jugadores.InsertarDato(jugadores.buscar("ZOMBI"),"Lopez");
-        
-        jugadores.InsertarDato(jugadores.buscar("PLANTA"),"SEBAS");
-        jugadores.InsertarDato(jugadores.buscar("PLANTA"),"ALEX");
-        jugadores.InsertarDato(jugadores.buscar("PLANTA"),"LOPEZ");
-        jugadores.InsertarDato(jugadores.buscar("PLANTA"),"CALDERON");
-        
-        jugadores.imprimir();
-        jugadores.GraficarLista();*/
         
         Principal ventana = new Principal();
         ventana.show();
