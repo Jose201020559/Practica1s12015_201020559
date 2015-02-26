@@ -22,6 +22,19 @@ public class Cola {
         this.tama=0;
     }
     
+    public void eliminar(){
+        if(this.tama>0){
+            this.inicio.Siguiente.Aterior=null;
+            this.inicio = this.inicio.Siguiente;
+            this.tama--;
+        }else if(this.tama==1){
+            this.inicio=null;
+            this.fin=null;
+            tama =0;
+        }
+        
+    }
+    
     public void insertarDatos(String n, String t, int a, int v, Icon i){
         NodoCatalogo nuevo = new NodoCatalogo(n,t,a,v,i);
         if(this.tama ==0){

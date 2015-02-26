@@ -29,6 +29,9 @@ public class Practica1s12015_201020559 {
     public static ListaCatalogo plantas = new ListaCatalogo();
     public static ListaCatalogo zombis = new ListaCatalogo();
     
+    public static Cola cola1 = new Cola();
+    public static Pila pila1 = new Pila();
+    
     
     public static void graficarcatalogo()throws IOException{
     @SuppressWarnings("UnusedAssignment")

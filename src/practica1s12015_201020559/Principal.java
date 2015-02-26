@@ -94,6 +94,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jButton6.setText("JUGAR");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -197,8 +202,10 @@ public class Principal extends javax.swing.JFrame {
             Practica1s12015_201020559.graficarcatalogo();
             try {
  
-               // File file = new File("C:\\Users\\Public\\Documents\\jugadores.jpg");
-                //Desktop.getDesktop().open(file);
+               File file = new File("C:\\Users\\Public\\Documents\\jugadores.jpg");
+                Desktop.getDesktop().open(file);
+                File file1 = new File("C:\\Users\\Public\\Documents\\catalogos.jpg");
+                Desktop.getDesktop().open(file1);
             } catch(Exception e) {
 
                 e.printStackTrace();
@@ -223,6 +230,14 @@ public class Principal extends javax.swing.JFrame {
         ven_c.tipoj="Planta";
         ven_c.show();
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        if(Practica1s12015_201020559.plantas.tama>0 && Practica1s12015_201020559.zombis.tama>0 && Practica1s12015_201020559.jugadores.t>=2){
+           Juego vJuego = new Juego();
+           vJuego.show();
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments

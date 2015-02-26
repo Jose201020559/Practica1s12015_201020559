@@ -207,6 +207,12 @@ public class Jugadores extends javax.swing.JFrame {
         else{
             Practica1s12015_201020559.jugadores.InsertarDato(Practica1s12015_201020559.jugadores.buscar(tipoj),jTextField1.getText());
             Practica1s12015_201020559.jugadores.InsertarDato(Practica1s12015_201020559.jugadores.buscar(tipoj),jTextField2.getText());
+            if(tipoj.equalsIgnoreCase("Planta")){
+                Practica1s12015_201020559.cp = Integer.parseInt(jTextField2.getText());
+            }
+            if(tipoj.equalsIgnoreCase("Zombi")){
+                Practica1s12015_201020559.cz = Integer.parseInt(jTextField2.getText());
+            }
             jButton2.setVisible(true);
             jButton1.setVisible(false);
             jTextField1.setEnabled(false);

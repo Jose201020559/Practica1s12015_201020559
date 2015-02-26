@@ -25,7 +25,7 @@ public class Catalogo extends javax.swing.JFrame {
     public static String tipoj = "";
     public String rutai="";
     public NodoCatalogo aux = null;
-    
+    public boolean modificar = false;
     public Catalogo() {
         initComponents();
     }
@@ -65,6 +65,7 @@ public class Catalogo extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -230,6 +231,13 @@ public class Catalogo extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("OCR A Extended", 1, 24)); // NOI18N
         jLabel15.setText("0/0");
 
+        jButton7.setText("BORRAR ACTUAL");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -260,9 +268,14 @@ public class Catalogo extends javax.swing.JFrame {
                                     .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel15)
-                                .addGap(43, 43, 43))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel15)
+                                        .addGap(43, 43, 43))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(22, 22, 22)
+                                        .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -278,20 +291,26 @@ public class Catalogo extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel5))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(21, 21, 21))
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel6)))
-                        .addGap(21, 21, 21)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel6))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jButton7)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton1)
                             .addComponent(jButton2)
@@ -341,7 +360,7 @@ public class Catalogo extends javax.swing.JFrame {
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         // TODO add your handling code here:
         //jPanel1.setVisible(false);
-        jButton6.setVisible(false);
+        //jButton6.setVisible(false);
         if (tipoj.equalsIgnoreCase("Planta")){
             aux=Practica1s12015_201020559.plantas.inicio;
         }else if(tipoj.equalsIgnoreCase("Zombi")){
@@ -376,7 +395,6 @@ public class Catalogo extends javax.swing.JFrame {
                 
             }else{
                 Practica1s12015_201020559.plantas.insertarDatos(jTextField2.getText(),(String) jComboBox1.getSelectedItem(), Integer.parseInt(jTextField3.getText()),Integer.parseInt(jTextField1.getText()),ij1);
-                Practica1s12015_201020559.plantas.imprimir();
                 aux=Practica1s12015_201020559.plantas.fin;
                 repintar();
                 limpiar();
@@ -387,7 +405,6 @@ public class Catalogo extends javax.swing.JFrame {
                 
             }else{
                 Practica1s12015_201020559.zombis.insertarDatos(jTextField2.getText(),(String) jComboBox1.getSelectedItem(), Integer.parseInt(jTextField3.getText()),Integer.parseInt(jTextField1.getText()), ij1);
-                Practica1s12015_201020559.zombis.imprimir();
                 aux=Practica1s12015_201020559.zombis.fin;
                 repintar();
                 limpiar();
@@ -400,17 +417,71 @@ public class Catalogo extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        jButton5.setVisible(false);
-        jButton6.setVisible(true);
-        
+        jTextField2.setText(aux.Nombre);
+        jTextField3.setText(Integer.toString(aux.ataque));
+        jTextField1.setText(Integer.toString(aux.vida));
+        modificar = true;
+        //jButton5.setVisible(false);
+        //jButton6.setVisible(true);
+      
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
+        if(modificar == true){
+        if(rutai.equalsIgnoreCase("")){
+            aux.Nombre = jTextField2.getText();
+            aux.ataque = Integer.parseInt(jTextField3.getText());
+            aux.vida = Integer.parseInt(jTextField1.getText());
+            aux.Tipo = (String)jComboBox1.getSelectedItem();
+            ImageIcon j1 = new ImageIcon(rutai);
+            Icon ij1 = new ImageIcon(j1.getImage().getScaledInstance(jLabel1.getWidth(), jLabel1.getHeight(), Image.SCALE_DEFAULT));
+            aux.imagen = ij1;
+            
+            //jButton6.setVisible(false);
+            //jButton5.setVisible(true);
+        }}
         
-        jButton6.setVisible(false);
-        jButton5.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        if (tipoj.equalsIgnoreCase("Planta")){
+
+                Practica1s12015_201020559.plantas.borrar(Practica1s12015_201020559.plantas.cuentame(aux));
+                aux=Practica1s12015_201020559.plantas.inicio;
+                if(Practica1s12015_201020559.plantas.tama>0){
+                    repintar();
+                    limpiar();
+                }else{
+                    jLabel9.setText("");
+                    jLabel8.setText("");
+                    jLabel7.setText("");
+                    jLabel6.setText("");
+                    jLabel1.setIcon(null);
+                }
+                
+
+            
+        }else if(tipoj.equalsIgnoreCase("Zombi")){
+            
+                Practica1s12015_201020559.plantas.borrar(Practica1s12015_201020559.zombis.cuentame(aux));
+                aux=Practica1s12015_201020559.zombis.inicio;
+                if(Practica1s12015_201020559.zombis.tama>0){
+                    repintar();
+                    limpiar();
+                }else{
+                    jLabel9.setText("");
+                    jLabel8.setText("");
+                    jLabel7.setText("");
+                    jLabel6.setText("");
+                    jLabel1.setIcon(null);
+                }
+
+            
+        }
+        
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     public void repintar(){
         jLabel9.setText(aux.Nombre);
@@ -470,6 +541,7 @@ public class Catalogo extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

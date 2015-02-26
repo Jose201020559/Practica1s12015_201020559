@@ -30,12 +30,25 @@ public class Pila {
             this.tama++;
         }
         else{
-            this.fin.Siguiente=nuevo;
-            nuevo.Aterior= this.fin;
-            this.fin=nuevo;
+            nuevo.Siguiente=this.inicio;
+            this.inicio.Aterior=nuevo;
+            this.inicio=nuevo;
             this.tama++;
         }
         
+    }
+    
+    public void eliminar(){
+        if(this.tama>0){
+            this.inicio.Siguiente.Aterior=null;
+            this.inicio = this.inicio.Siguiente;
+            this.tama--;
+        }
+        else if(this.tama==1){
+            this.inicio=null;
+            this.fin=null;
+            tama =0;
+        }
     }
     public void imprimir(){
         

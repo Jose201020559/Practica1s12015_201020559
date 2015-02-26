@@ -64,4 +64,46 @@ public class ListaCatalogo {
         return dato;
     }
     
+    public  int cuentame(NodoCatalogo aux){ 
+        int i = 1;
+        if(this.tama>0){
+            NodoCatalogo aux1 = this.inicio;
+            while(aux1!=aux){
+                i++;
+                aux1=aux1.Siguiente;
+            }
+
+        }
+        return i; 
+    } 
+    
+    public void borrar(int i){
+        NodoCatalogo aux1 = this.inicio;
+        if(this.tama==1){
+            this.inicio=null;
+            this.fin=null;
+            this.tama=0;
+        }
+        else{
+            if(i==1){
+                this.inicio.Siguiente.Aterior = null;
+                this.inicio= this.inicio.Siguiente;
+                
+            }
+            else if(i==this.tama && this.tama>0){
+                this.fin.Aterior.Siguiente = null;
+                this.fin = this.fin.Aterior;
+                
+            }
+            else if (this.tama>0){
+                for(int j = 1; j<i; j++){
+                    aux1= aux1.Siguiente;
+                }
+                aux1.Aterior.Siguiente= aux1.Siguiente;
+                aux1.Siguiente.Aterior = aux1.Aterior;
+            }
+            
+        }
+    }
+    
 }
